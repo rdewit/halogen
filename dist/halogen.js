@@ -1,4 +1,26 @@
-require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.Halogen=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+    PulseLoader: require('./PulseLoader'),
+    RotateLoader: require('./RotateLoader'),
+    BeatLoader: require('./BeatLoader'),
+    RiseLoader: require('./RiseLoader'),
+    SyncLoader: require('./SyncLoader'),
+    GridLoader: require('./GridLoader'),
+    ClipLoader: require('./ClipLoader'),
+    SquareLoader: require('./SquareLoader'),
+    DotLoader: require('./DotLoader'),
+    PacmanLoader: require('./PacmanLoader'),
+    MoonLoader: require('./MoonLoader'),
+    RingLoader: require('./RingLoader'),
+    BounceLoader: require('./BounceLoader'),
+    SkewLoader: require('./SkewLoader'),
+    FadeLoader: require('./FadeLoader'),
+    ScaleLoader: require('./ScaleLoader')
+};
+
+},{"./BeatLoader":8,"./BounceLoader":9,"./ClipLoader":10,"./DotLoader":11,"./FadeLoader":12,"./GridLoader":13,"./MoonLoader":14,"./PacmanLoader":15,"./PulseLoader":16,"./RingLoader":17,"./RiseLoader":18,"./RotateLoader":19,"./ScaleLoader":20,"./SkewLoader":21,"./SquareLoader":22,"./SyncLoader":23}],2:[function(require,module,exports){
 'use strict';
 
 var getVendorPropertyName = require('./getVendorPropertyName');
@@ -30,12 +52,12 @@ module.exports = function(target, sources) {
   return prefixed
 }
 
-},{"./getVendorPropertyName":4}],2:[function(require,module,exports){
+},{"./getVendorPropertyName":5}],3:[function(require,module,exports){
 'use strict';
 
 module.exports = document.createElement('div').style;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 var cssVendorPrefix;
@@ -50,7 +72,7 @@ module.exports = function() {
   return cssVendorPrefix = '-' + pre + '-';
 }
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 var builtinStyle = require('./builtinStyle');
@@ -89,7 +111,7 @@ module.exports = function(prop, isSupportTest) {
 
 }
 
-},{"./builtinStyle":2}],5:[function(require,module,exports){
+},{"./builtinStyle":3}],6:[function(require,module,exports){
 'use strict';
 
 var insertRule = require('./insertRule');
@@ -121,7 +143,7 @@ module.exports = function(keyframes) {
   return name
 }
 
-},{"./getVendorPrefix":3,"./insertRule":6}],6:[function(require,module,exports){
+},{"./getVendorPrefix":4,"./insertRule":7}],7:[function(require,module,exports){
 'use strict';
 
 var extraSheet;
@@ -142,10 +164,11 @@ module.exports = function(css) {
   return extraSheet;
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -253,10 +276,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],8:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],9:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -375,10 +400,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],9:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],10:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -488,10 +515,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],10:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],11:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -629,10 +658,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],11:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],12:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -812,10 +843,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],12:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],13:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -955,10 +988,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],13:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],14:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1082,10 +1117,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],14:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],15:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1228,10 +1265,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],15:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],16:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1346,10 +1385,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],16:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],17:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1493,10 +1534,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],17:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],18:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1647,10 +1690,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],18:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],19:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1775,10 +1820,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],19:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],20:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -1896,10 +1943,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],20:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],21:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -2010,10 +2059,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],21:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],22:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -2125,10 +2176,12 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],22:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}],23:[function(require,module,exports){
+(function (global){
 'use strict';
 
-var React = require('react');
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var assign = require('domkit/appendVendorPrefix');
 var insertKeyframesRule = require('domkit/insertKeyframesRule');
 
@@ -2240,26 +2293,6 @@ var Loader = React.createClass({
 
 module.exports = Loader;
 
-},{"domkit/appendVendorPrefix":1,"domkit/insertKeyframesRule":5,"react":undefined}],"halogen":[function(require,module,exports){
-'use strict';
-
-module.exports = {
-    PulseLoader: require('./PulseLoader'),
-    RotateLoader: require('./RotateLoader'),
-    BeatLoader: require('./BeatLoader'),
-    RiseLoader: require('./RiseLoader'),
-    SyncLoader: require('./SyncLoader'),
-    GridLoader: require('./GridLoader'),
-    ClipLoader: require('./ClipLoader'),
-    SquareLoader: require('./SquareLoader'),
-    DotLoader: require('./DotLoader'),
-    PacmanLoader: require('./PacmanLoader'),
-    MoonLoader: require('./MoonLoader'),
-    RingLoader: require('./RingLoader'),
-    BounceLoader: require('./BounceLoader'),
-    SkewLoader: require('./SkewLoader'),
-    FadeLoader: require('./FadeLoader'),
-    ScaleLoader: require('./ScaleLoader')
-};
-
-},{"./BeatLoader":7,"./BounceLoader":8,"./ClipLoader":9,"./DotLoader":10,"./FadeLoader":11,"./GridLoader":12,"./MoonLoader":13,"./PacmanLoader":14,"./PulseLoader":15,"./RingLoader":16,"./RiseLoader":17,"./RotateLoader":18,"./ScaleLoader":19,"./SkewLoader":20,"./SquareLoader":21,"./SyncLoader":22}]},{},[]);
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"domkit/appendVendorPrefix":2,"domkit/insertKeyframesRule":6}]},{},[1])(1)
+});
